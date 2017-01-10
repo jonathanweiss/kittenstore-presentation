@@ -1,0 +1,6 @@
+ReactDOM.render(
+  <BrowserRouter>
+    <App data={data} />
+  </BrowserRouter>,
+  document.getElementById('root'),
+);

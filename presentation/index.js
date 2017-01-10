@@ -69,7 +69,6 @@ export default class Presentation extends React.Component {
                         <CodePane
                             lang="bash"
                             source={require("raw!../assets/install.sh")}
-                            margin="20px auto"
                             textSize="1.75rem"
                         />
                     </Slide>
@@ -95,7 +94,9 @@ export default class Presentation extends React.Component {
                         </List>
                     </Slide>
 
-                    <Slide bgImage={images.screenshot} />
+                    <Slide bgImage={images.screenshot} bgDarken={0.50}>
+                        <Heading size={2} lineHeight={1} textColor="tertiary">Demo</Heading>
+                    </Slide>
 
                     <Slide>
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Declarative routing</Heading>
@@ -114,6 +115,42 @@ export default class Presentation extends React.Component {
                             <ListItem><Code>&lt;Redirect /&gt;</Code></ListItem>
                         </List>
                     </Slide>
+
+                    <Slide>
+                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Setting up the router</Heading>
+
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Installing</Heading>
+                        <CodePane
+                            lang="bash"
+                            textSize="1.75rem"
+                        >
+                            npm install react-router@4.0.0-2 --save
+                        </CodePane>
+
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Using</Heading>
+                        <CodePane
+                            source={require("raw!../assets/using.example")}
+                            lang="jsx"
+                            textSize="1.75rem"
+                        />
+                    </Slide>
+
+                    <Slide>
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Components for matches</Heading>
+                        <CodePane
+                            source={require("raw!../assets/match.example")}
+                            lang="jsx"
+                            textSize="1.75rem"
+                        />
+
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Fallback component</Heading>
+                        <CodePane
+                            source={require("raw!../assets/miss.example")}
+                            lang="jsx"
+                            textSize="1.75rem"
+                        />
+                    </Slide>
+
 
                     <Slide>
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Questions?</Heading>

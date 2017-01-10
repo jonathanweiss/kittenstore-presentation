@@ -1,0 +1,5 @@
+<div>
+    <Match exactly pattern="/about" component={About} />
+    <Match exactly pattern="/contact" component={Contact} />
+    <Match exactly pattern="/cart" component={Cart} />
+</div>
