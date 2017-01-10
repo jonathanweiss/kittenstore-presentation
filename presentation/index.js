@@ -38,6 +38,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
+    screenshot: require('../assets/screenshot.png'),
 };
 
 preloader(images);
@@ -74,7 +75,7 @@ export default class Presentation extends React.Component {
                     </Slide>
 
                     <Slide>
-                        <Heading size={2}>Jonathan Weiß</Heading>
+                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Jonathan Weiß</Heading>
                         <List>
                             <ListItem>Freelance JavaScript / front-end dev</ListItem>
                             <ListItem><Link textColor="tertiary" href="https://github.com/jonathanweiss">https://github.com/jonathanweiss</Link></ListItem>
@@ -82,6 +83,19 @@ export default class Presentation extends React.Component {
                             <ListItem><Link textColor="tertiary" href="https://linkedin.com/in/jonathanfweiss">LinkedIn</Link>, <Link textColor="tertiary" href="https://www.xing.com/profile/Jonathan_Weiss5">XING</Link></ListItem>
                         </List>
                     </Slide>
+
+                    <Slide>
+                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Demo project</Heading>
+                        <List>
+                            <ListItem>mimics a simple online shop</ListItem>
+                            <ListItem>was created with <Link href="https://github.com/facebookincubator/create-react-app">create-react-app</Link></ListItem>
+                            <ListItem>uses <Link href="https://github.com/picturepan2/spectre">Spectre.css</Link> and <Link href="https://icomoon.io/#icon-font">IconMoo</Link></ListItem>
+                            <ListItem>contains (mostly) statless components</ListItem>
+                            <ListItem>doesn't use a backend</ListItem>
+                        </List>
+                    </Slide>
+
+                    <Slide bgImage={images.screenshot} />
 
                     <Slide>
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Declarative routing</Heading>
