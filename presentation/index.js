@@ -66,11 +66,7 @@ export default class Presentation extends React.Component {
                         <Heading size={1} fit caps lineHeight={1} textColor="secondary">react-router</Heading>
                         <Heading size={1} fit caps>With Michael Jackson… and kittens!</Heading>
                         <Text textAlign="left">If you want to code with me:</Text>
-                        <CodePane
-                            lang="bash"
-                            source={require("raw!../assets/install.sh")}
-                            textSize="1.75rem"
-                        />
+                        <CodePane lang="bash" source={require("raw!../assets/install.sh")} textSize="1.75rem" />
                     </Slide>
 
                     <Slide>
@@ -90,7 +86,7 @@ export default class Presentation extends React.Component {
                             <ListItem>was created with <Link href="https://github.com/facebookincubator/create-react-app">create-react-app</Link></ListItem>
                             <ListItem>uses <Link href="https://github.com/picturepan2/spectre">Spectre.css</Link> and <Link href="https://icomoon.io/#icon-font">IconMoo</Link></ListItem>
                             <ListItem>contains (mostly) statless components</ListItem>
-                            <ListItem>doesn't use a backend</ListItem>
+                            <ListItem>doesn't use a backend (all data in <Code>mockData.js</Code>)</ListItem>
                         </List>
                     </Slide>
 
@@ -120,35 +116,20 @@ export default class Presentation extends React.Component {
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Setting up the router</Heading>
 
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Installing</Heading>
-                        <CodePane
-                            lang="bash"
-                            textSize="1.75rem"
-                        >
+                        <CodePane lang="bash" textSize="1.75rem">
                             npm install react-router@4.0.0-2 --save
                         </CodePane>
 
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Using</Heading>
-                        <CodePane
-                            source={require("raw!../assets/using.example")}
-                            lang="jsx"
-                            textSize="1.75rem"
-                        />
+                        <CodePane source={require("raw!../assets/using.example")} lang="jsx" textSize="1.75rem" />
                     </Slide>
 
                     <Slide>
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Components for matches</Heading>
-                        <CodePane
-                            source={require("raw!../assets/match.example")}
-                            lang="jsx"
-                            textSize="1.75rem"
-                        />
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Static matches</Heading>
+                        <CodePane source={require("raw!../assets/match.example")} lang="jsx" textSize="1.75rem" />
 
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Fallback component</Heading>
-                        <CodePane
-                            source={require("raw!../assets/miss.example")}
-                            lang="jsx"
-                            textSize="1.75rem"
-                        />
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Fallback</Heading>
+                        <CodePane source={require("raw!../assets/miss.example")} lang="jsx" textSize="1.75rem" />
                     </Slide>
 
 
@@ -162,6 +143,9 @@ export default class Presentation extends React.Component {
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore-presentation">This presentation</Link></Text>
                     </Slide>
 
+                    <Slide>
+                    
+                    </Slide>
 
                 </Deck>
             </Spectacle>
