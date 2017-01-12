@@ -1,0 +1,23 @@
+<div>
+  <Match
+    pattern="/cats/:breed/:catName"
+    exactly
+    render={({ params }) => (
+      <Detail
+        data={cats}
+        slug={params.catName}
+      />
+    )}
+  />
+
+  <Match
+    pattern="/search/:term"
+    exactly
+    render={({params}) => (
+      <SearchResult
+        term={params.term}
+        data={cats}
+      />
+    )}
+  />
+</div>

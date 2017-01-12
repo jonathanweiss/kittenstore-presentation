@@ -1,0 +1,9 @@
+<Match pattern="" children={({ location })=>{
+  const parts = location.pathname.split('/');
+  return (
+    <Navigation
+      items={navigationData}
+      activePath={`/${parts[1]}`}
+    />
+  );
+}} />

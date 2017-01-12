@@ -1,0 +1,21 @@
+const App = (props, context) => {
+  const { navigationData, categories, products } = props.data;
+  const { cats } = products;
+
+  const pathParts = context.history.location.pathname.split('/');
+
+  return (
+    <div>
+      <Navigation items={navigationData} activePath={`/${pathParts[1]}`} />
+      <Match pattern="/about" exactly component={About} />
+      <Match pattern="/cart" exactly component={Cart} />
+      <Match pattern="/contact" exactly component={Contact} />
+
+      <Miss component={Error404} />
+    </div>
+  );
+};
+
+App.contextTypes = {
+  history: React.PropTypes.object,
+};

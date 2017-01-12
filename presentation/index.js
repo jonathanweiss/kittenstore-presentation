@@ -66,7 +66,7 @@ export default class Presentation extends React.Component {
             <Spectacle theme={theme}>
                 <Deck transition={['slide']} transitionDuration={250} progress="number">
                     <Slide>
-                        <Heading size={1} fit caps lineHeight={1} textColor="secondary">react-router</Heading>
+                        <Heading size={1} fit caps lineHeight={1} textColor="secondary">react-router v4</Heading>
                         <Heading size={1} fit caps>With Michael Jackson… and kittens!</Heading>
                         <Text textAlign="left">If you want to code with me:</Text>
                         <CodePane lang="bash" source={require("raw!../assets/install.sh")} textSize="1.75rem" />
@@ -123,7 +123,7 @@ export default class Presentation extends React.Component {
 
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Installing</Heading>
                         <CodePane lang="bash" textSize="1.75rem">
-                            npm install react-router@4.0.0-2 --save
+                            npm install --save react-router@next --save
                         </CodePane>
 
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Using</Heading>
@@ -163,7 +163,98 @@ export default class Presentation extends React.Component {
                         ranges={[
                             { loc: [0, 0], title: "Let's enable those links"},
                             { loc: [1, 2], note: "Import the <Link /> component"},
-                            { loc: [11, 19], note: "And use it anstead of <a href>"},
+                            { loc: [11, 16], note: "And use it anstead of <a href>"},
+                            { loc: [18, 19], note: "Don't forget the closing tag"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+                    <CodeSlide
+                        code={require('raw!../assets/markActiveNavigationItem.example')}
+                        ranges={[
+                            { loc: [0, 9], title: "Mark nav item as active"},
+                            { loc: [0, 1], note: "'children' function has useful arguments"},
+                            { loc: [1, 6], note: "First part of 'location' is the active entry"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <CodeSlide
+                        code={require('raw!../assets/markActiveAlternative.example')}
+                        ranges={[
+                            { loc: [0, 21], title: "Use 'context' instead"},
+                            { loc: [18, 21], note: "define the contextTypes"},
+                            { loc: [0, 1], note: "Use the 'context' parameter"},
+                            { loc: [4, 5], note: "Get the 'pathname' from it"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <CodeSlide
+                        code={require('raw!../assets/matchWithRender.example')}
+                        ranges={[
+                            { loc: [0, 48], title: "What about props?"},
+                            { loc: [3, 9], note: "Gain flexibility with render()"},
+                            { loc: [15, 17], note: "Can we improve this?"},
+                            { loc: [24, 28], note: "Yes we can!"},
+                            { loc: [31, 44], note: "Accessing URL parameters"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <Slide>
+                        <Text textAlign="left">We have to adjust <Code>Homepage.jsx</Code></Text>
+                        <CodePane lang="js" textSize="1.75rem">
+                            const catData = props.data.products.cats;
+                        </CodePane>
+                        <Text textAlign="left">into</Text>
+                        <CodePane lang="js" textSize="1.75rem">
+                            const catData = props.data;
+                        </CodePane>
+                        <Text textAlign="left">and</Text>
+                        <CodePane lang="js" textSize="1.75rem">
+                            data: React.PropTypes.object,
+                        </CodePane>
+                        <Text textAlign="left">into</Text>
+                        <CodePane lang="js" textSize="1.75rem">
+                            data: React.PropTypes.array,
+                        </CodePane>
+                    </Slide>
+
+                    <CodeSlide
+                        code={require('raw!../assets/addLinksToCategory.example')}
+                        ranges={[
+                            { loc: [0, 37], title: "Adding <Link />s"},
+                            { loc: [1, 2], note: "First import it"},
+                            { loc: [15, 17], note: "We add a new var here..."},
+                            { loc: [24, 31], note: "... and pass it to renderProduct()"},
+                            { loc: [3, 6], note: "Use 'type' and 'slug' to create the target"},
+                            { loc: [10, 11], note: "Closing it"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <CodeSlide
+                        code={require('raw!../assets/lastRoutes.example')}
+                        ranges={[
+                            { loc: [0, 14], title: "Only two more routes"},
+                            { loc: [1, 11], note: "There can be more than one parameter"},
+                            { loc: [13, 22], note: "The search will be simple"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <CodeSlide
+                        code={require('raw!../assets/lastRoutes.example')}
+                        ranges={[
+                            { loc: [0, 14], title: "Only two more routes"},
+                            { loc: [1, 11], note: "There can be more than one parameter"},
+                            { loc: [13, 22], note: "The search will be simple"},
                         ]}
                         lang="jsx"
                         transition={[]}

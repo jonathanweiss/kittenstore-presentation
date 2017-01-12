@@ -1,0 +1,47 @@
+<Match
+  pattern="/"
+  exactly
+  render={() => (
+    <Homepage
+      amountOfProducts={2}
+      data={cats}
+    />
+  )}
+/>
+<Match
+  pattern="/catfood"
+  exactly
+  render={() => (
+    <Category
+      desc={categories.catfood.desc}
+      items={categories.catfood.items}
+    />
+  ) }
+/>
+<Match
+  pattern="/cats"
+  exactly
+  render={() => {
+    const { desc, items } = categories.cats;
+    return (
+      <Category desc={desc} items={items} />
+    )
+  }}
+/>
+<Match
+  pattern="/cats/:breed"
+  exactly
+  render={({ params }) => {
+    return (
+      <List
+        type="cats"
+        data={cats}
+        slug={params.breed}
+      />
+    );
+  }}
+/>
+
+
+
+
