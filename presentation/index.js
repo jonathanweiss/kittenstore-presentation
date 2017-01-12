@@ -41,6 +41,7 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
     screenshot: require('../assets/screenshot.png'),
+    something: require('../assets/something.png'),
 };
 
 preloader(images);
@@ -83,6 +84,8 @@ export default class Presentation extends React.Component {
                     </Slide>
 
                     <Slide>
+                        <Heading textAlign="left" size={1} lineHeight={1} textColor="secondary">Live coding</Heading>
+
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Demo project</Heading>
                         <List>
                             <ListItem>mimics a simple online shop</ListItem>
@@ -138,6 +141,34 @@ export default class Presentation extends React.Component {
                         lang="jsx"
                         transition={[]}
                     />
+
+                    <Slide>
+                        <Text textAlign="left">We've added a single route and a 404 page.</Text>
+                        <Image src={images.something} width={339} height={490} />
+                    </Slide>
+
+                    <CodeSlide
+                        code={require('raw!../assets/addNavigation.example')}
+                        ranges={[
+                            { loc: [0, 0], title: "Adding navigation"},
+                            { loc: [22, 23], note: "Place the navigation on top of all other components"},
+                            { loc: [23, 38], note: "We can add more static pages while we are here"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <CodeSlide
+                        code={require('raw!../assets/addLinksToNavigation.example')}
+                        ranges={[
+                            { loc: [0, 0], title: "Let's enable those links"},
+                            { loc: [1, 2], note: "Import the <Link /> component"},
+                            { loc: [11, 19], note: "And use it anstead of <a href>"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
 
                     <Slide>
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Questions?</Heading>

@@ -1,0 +1,51 @@
+/* eslint-disable no-unused-vars */
+
+import React from 'react';
+import { Match, Miss } from 'react-router';
+
+import Homepage from './components/Homepage';
+import About from './components/About';
+import Cart from './components/Cart';
+import Category from './components/Category';
+import Contact from './components/Contact';
+import Detail from './components/Detail';
+import Error404 from './components/Error404';
+import List from './components/List';
+import Navigation from './components/Navigation';
+import SearchResult from './components/SearchResult';
+
+const App = (props) => {
+  const { navigationData, categories, products } = props.data;
+  const { cats } = products;
+
+  return (
+    <div>
+      <Navigation items={navigationData} />
+      <Match
+        pattern="/about"
+        exactly
+        component={About}
+      />
+      <Match
+        pattern="/cart"
+        exactly
+        component={Cart}
+      />
+      <Match
+        pattern="/contact"
+        exactly
+        component={Contact}
+      />
+
+      <Miss component={Error404} />
+    </div>
+  );
+};
+
+App.propTypes = {
+  data: React.PropTypes.object,
+};
+
+export default App;
+
+/* eslint-enable no-unused-vars */

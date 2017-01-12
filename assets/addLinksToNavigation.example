@@ -1,0 +1,21 @@
+import React from 'react';
+import { Link } from 'react-router';
+
+const renderNavItem = (entry, activePath) => {
+  const cssClasses = [
+    'btn',
+    'btn-link',
+    activePath === entry.link ? 'btn-link-active' : '',
+  ];
+
+  return (
+    <Link
+      to={entry.link}
+      className={cssClasses.join(' ')}
+      key={entry.link}
+    >
+        {entry.icon ? <i className={`icon icon-${entry.icon}`} /> : null}
+        {entry.text}
+    </Link>
+  );
+};
