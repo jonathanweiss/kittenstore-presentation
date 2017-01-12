@@ -23,6 +23,8 @@ import {
   Text
 } from "spectacle";
 
+import CodeSlide from 'spectacle-code-slide';
+
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
 
@@ -67,6 +69,7 @@ export default class Presentation extends React.Component {
                         <Heading size={1} fit caps>With Michael Jackson… and kittens!</Heading>
                         <Text textAlign="left">If you want to code with me:</Text>
                         <CodePane lang="bash" source={require("raw!../assets/install.sh")} textSize="1.75rem" />
+                        <Text textAlign="left">Open <Code>App.jsx</Code> and toggle <Code>SHOW_ALL_COMPONENTS</Code>.</Text>
                     </Slide>
 
                     <Slide>
@@ -124,14 +127,17 @@ export default class Presentation extends React.Component {
                         <CodePane source={require("raw!../assets/using.example")} lang="jsx" textSize="1.75rem" />
                     </Slide>
 
-                    <Slide>
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Static matches</Heading>
-                        <CodePane source={require("raw!../assets/match.example")} lang="jsx" textSize="1.75rem" />
-
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Fallback</Heading>
-                        <CodePane source={require("raw!../assets/miss.example")} lang="jsx" textSize="1.75rem" />
-                    </Slide>
-
+                    <CodeSlide
+                        code={require('raw!../assets/missAndMatch.example')}
+                        ranges={[
+                            { loc: [0, 0], title: "Using <Miss /> and <Match />"},
+                            { loc: [3, 4], note: "Import the router components"},
+                            { loc: [22, 26], note: "Define the component 'About' for path '/about'"},
+                            { loc: [27, 28], note: "Render this component when NO Match is active"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
 
                     <Slide>
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Questions?</Heading>
@@ -141,10 +147,6 @@ export default class Presentation extends React.Component {
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore">Demo project without routing (master branch)</Link></Text>
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore/tree/feature/add-routing">Finished project</Link></Text>
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore-presentation">This presentation</Link></Text>
-                    </Slide>
-
-                    <Slide>
-                    
                     </Slide>
 
                 </Deck>

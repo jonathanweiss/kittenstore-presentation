@@ -1,6 +1,6 @@
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <App data={data} />
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root'),
 );
