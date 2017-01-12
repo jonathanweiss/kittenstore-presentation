@@ -296,13 +296,27 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/recursive.example')}
                         ranges={[
-                            { loc: [0, 17], title: "recursive rendering"},
-                            { loc: [3, 5], note: "Accessing 'location.query'"},
-                            { loc: [10, 12], note: "Passing it in as a prop"},
+                            { loc: [0, 123], title: "recursive rendering"},
+                            { loc: [1, 2], note: "We'll need Match and Link"},
+                            { loc: [16, 19], note: "Let's replace the <a href> while we're here..."},
+                            { loc: [71, 75], note: "Adding a <Match /> to <Detail />"},
+                            { loc: [83, 88], note: "Calling <Detail /> inside of <Detail />"},
                         ]}
                         lang="jsx"
                         transition={[]}
                     />
+
+                    <CodeSlide
+                        code={require('raw!../assets/programmatically.example')}
+                        ranges={[
+                            { loc: [0, 59], title: "Navigate programatically"},
+                            { loc: [28, 29], note: "We grab 'transitionTo()' from 'context.router'..."},
+                            { loc: [22, 23], note: "...and use it with the serarch term"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
 
 
                     <Slide>
