@@ -2,7 +2,12 @@
   pattern="/cats/:breed"
   exactly
   render={ ({ params, location }) => {
-    const { sortedBy, sortDirection } = location.query;
+    const sortedBy = location.query ?
+      location.query.sortedBy :
+      null;
+    const sortDirection = location.query ?
+      location.query.sortDirection :
+      null;
     return (
       <List
         type="cats"
