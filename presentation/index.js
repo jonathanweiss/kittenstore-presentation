@@ -43,6 +43,7 @@ const images = {
     screenshot: require('../assets/screenshot.png'),
     something: require('../assets/something.png'),
     tea: require('../assets/tea.jpg'),
+    jackson: require('../assets/jackson.png'),
 };
 
 preloader(images);
@@ -95,6 +96,7 @@ export default class Presentation extends React.Component {
                             <ListItem>contains (mostly) statless components</ListItem>
                             <ListItem>doesn't use a backend (all data in <Code>mockData.js</Code>)</ListItem>
                         </List>
+                        <Text textAlign="left">Use <strong>tags</strong> <Code>step-*</Code> if you're stuck or have a look at <strong>branch</strong> <Code>feature/add-routing</Code> to see finished project.</Text>
                     </Slide>
 
                     <Slide bgImage={images.screenshot} bgDarken={0.50}>
@@ -328,6 +330,16 @@ export default class Presentation extends React.Component {
                         transition={[]}
                     />
 
+                    <Slide>
+                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">react-router + Redux</Heading>
+                    </Slide>
+
+                    <Slide>
+                        <Text>We saw the kittens, but where is <em>Michael Jackson</em>?</Text>
+                        <Appear>
+                            <Image src={images.jackson} width={965} height={638} />
+                        </Appear>
+                    </Slide>
 
                     <Slide>
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Questions?</Heading>
