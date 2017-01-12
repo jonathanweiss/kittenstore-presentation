@@ -1,0 +1,16 @@
+<Match
+  pattern="/cats/:breed"
+  exactly
+  render={ ({ params, location }) => {
+    const { sortedBy, sortDirection } = location.query;
+    return (
+      <List
+        type="cats"
+        data={cats}
+        slug={params.breed}
+        sortedBy={sortedBy}
+        sortDirection={sortDirection}
+      />
+    );
+  } }
+/>

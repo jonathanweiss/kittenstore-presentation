@@ -227,7 +227,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/addLinksToCategory.example')}
                         ranges={[
-                            { loc: [0, 37], title: "Adding <Link />s"},
+                            { loc: [0, 43], title: "Adding <Link />s"},
                             { loc: [1, 2], note: "First import it"},
                             { loc: [15, 17], note: "We add a new var here..."},
                             { loc: [24, 31], note: "... and pass it to renderProduct()"},
@@ -241,7 +241,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/lastRoutes.example')}
                         ranges={[
-                            { loc: [0, 14], title: "Only two more routes"},
+                            { loc: [0, 24], title: "Only two more routes"},
                             { loc: [1, 11], note: "There can be more than one parameter"},
                             { loc: [13, 22], note: "The search will be simple"},
                         ]}
@@ -255,6 +255,33 @@ export default class Presentation extends React.Component {
                             { loc: [0, 14], title: "Only two more routes"},
                             { loc: [1, 11], note: "There can be more than one parameter"},
                             { loc: [13, 22], note: "The search will be simple"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <CodeSlide
+                        code={require('raw!../assets/listFinal.example')}
+                        ranges={[
+                            { loc: [0, 106], title: "Finalizing <List />"},
+                            { loc: [1, 2], note: "You know the drill. ;)"},
+                            { loc: [101, 102], note: "Defining the contextTypes"},
+                            { loc: [75, 76], note: "Getting the pathname..."},
+                            { loc: [88, 89], note: "...and passing it to renderProducts()"},
+                            { loc: [41, 46], note: "Adding a link to the cat name"},
+                            { loc: [18, 19], note: "Adding links to all headers for sorting"},
+                            { loc: [19, 20], note: "Show an arrow if it's sorted after this header"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <CodeSlide
+                        code={require('raw!../assets/requestParams.example')}
+                        ranges={[
+                            { loc: [0, 17], title: "Request parameters"},
+                            { loc: [3, 5], note: "Accessing 'location.query'"},
+                            { loc: [10, 12], note: "Passing it in as a prop"},
                         ]}
                         lang="jsx"
                         transition={[]}
