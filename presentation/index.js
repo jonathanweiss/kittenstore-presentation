@@ -311,12 +311,22 @@ export default class Presentation extends React.Component {
                         ranges={[
                             { loc: [0, 59], title: "Navigate programatically"},
                             { loc: [28, 29], note: "We grab 'transitionTo()' from 'context.router'..."},
-                            { loc: [22, 23], note: "...and use it with the serarch term"},
+                            { loc: [22, 23], note: "...and use it with the search term"},
                         ]}
                         lang="jsx"
                         transition={[]}
                     />
 
+                    <CodeSlide
+                        code={require('raw!../assets/prevent.example')}
+                        ranges={[
+                            { loc: [0, 51], title: "Preventing navigation"},
+                            { loc: [1, 2], note: "We need <NavigationPropmt />"},
+                            { loc: [23, 27], note: "It will be active when 'when' is truthful"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
 
 
                     <Slide>
