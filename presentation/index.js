@@ -209,25 +209,6 @@ export default class Presentation extends React.Component {
                         transition={[]}
                     />
 
-                    <Slide>
-                        <Text textAlign="left">We have to adjust <Code>Homepage.jsx</Code></Text>
-                        <CodePane lang="js" textSize="1.75rem">
-                            const catData = props.data.products.cats;
-                        </CodePane>
-                        <Text textAlign="left">into</Text>
-                        <CodePane lang="js" textSize="1.75rem">
-                            const catData = props.data;
-                        </CodePane>
-                        <Text textAlign="left">and</Text>
-                        <CodePane lang="js" textSize="1.75rem">
-                            data: React.PropTypes.object,
-                        </CodePane>
-                        <Text textAlign="left">into</Text>
-                        <CodePane lang="js" textSize="1.75rem">
-                            data: React.PropTypes.array,
-                        </CodePane>
-                    </Slide>
-
                     <CodeSlide
                         code={require('raw!../assets/addLinksToCategory.example')}
                         ranges={[
