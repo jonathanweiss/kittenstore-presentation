@@ -44,6 +44,7 @@ const images = {
     something: require('../assets/something.png'),
     tea: require('../assets/tea.jpg'),
     jackson: require('../assets/jackson.png'),
+    redux: require('../assets/redux.png'),
 };
 
 preloader(images);
@@ -331,8 +332,26 @@ export default class Presentation extends React.Component {
                     />
 
                     <Slide>
-                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">react-router + Redux</Heading>
+                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">react-router + Redux?</Heading>
+                        <Appear>
+                            <Image src={images.redux} width={739} height={483} />
+                        </Appear>
                     </Slide>
+
+                    <Slide>
+                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Options to using it</Heading>
+                        <List>
+                            <ListItem><Link textColor="tertiary" href="https://github.com/timdorr/react-router-redux/tree/5.0.x">react-router-redux</Link> on 5.0.x - inactive for months</ListItem>
+                            <ListItem><Link textColor="tertiary" href="https://github.com/supasate/connected-react-router">connected-react-router</Link> - experimental project</ListItem>
+                        </List>
+                        <Appear>
+                            <Text textAlign="left">Tip: use <Code>connected-react-router</Code> if you're brave!</Text>
+                        </Appear>
+                        <Appear>
+                            <Text textAlign="left">Check out the branch <Code>/feature/add-redux</Code> on the demo project.</Text>
+                        </Appear>
+                    </Slide>
+
 
                     <Slide>
                         <Text>We saw the kittens, but where is <em>Michael Jackson</em>?</Text>
@@ -348,6 +367,7 @@ export default class Presentation extends React.Component {
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Everything is on Github</Heading>
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore">Demo project without routing (master branch)</Link></Text>
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore/tree/feature/add-routing">Finished project</Link></Text>
+                        <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore/tree/feature/add-redux">Finished project (with Redux)</Link></Text>
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore-presentation">This presentation</Link></Text>
                     </Slide>
 
