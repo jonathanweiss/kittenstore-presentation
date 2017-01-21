@@ -107,18 +107,18 @@ export default class Presentation extends React.Component {
                     <Slide>
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Declarative routing</Heading>
 
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Configuration</Heading>
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Configuration components</Heading>
                         <List>
-                            <ListItem><Code>&lt;*Router /&gt;</Code></ListItem>
+                            <ListItem><Code>&lt;*Router /&gt;</Code>: Browser, Hash, Memory, Server</ListItem>
                             <ListItem><Code>&lt;Match /&gt;</Code></ListItem>
                             <ListItem><Code>&lt;Miss /&gt;</Code></ListItem>
                         </List>
 
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Helper</Heading>
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Action components</Heading>
                         <List>
                             <ListItem><Code>&lt;Link /&gt;</Code></ListItem>
                             <ListItem><Code>&lt;NavigationPrompt /&gt;</Code></ListItem>
-                            <ListItem><Code>&lt;Redirect /&gt;</Code></ListItem>
+                            <ListItem><Code>&lt;Redirect /&gt;</Code> - not covered in this talk</ListItem>
                         </List>
                     </Slide>
 
@@ -227,17 +227,6 @@ export default class Presentation extends React.Component {
                         code={require('raw!../assets/lastRoutes.example')}
                         ranges={[
                             { loc: [0, 24], title: "Only two more routes"},
-                            { loc: [1, 11], note: "There can be more than one parameter"},
-                            { loc: [13, 22], note: "The search will be simple"},
-                        ]}
-                        lang="jsx"
-                        transition={[]}
-                    />
-
-                    <CodeSlide
-                        code={require('raw!../assets/lastRoutes.example')}
-                        ranges={[
-                            { loc: [0, 14], title: "Only two more routes"},
                             { loc: [1, 11], note: "There can be more than one parameter"},
                             { loc: [13, 22], note: "The search will be simple"},
                         ]}
