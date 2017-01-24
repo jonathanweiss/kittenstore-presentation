@@ -303,14 +303,18 @@ export default class Presentation extends React.Component {
                     </Slide>
 
                     <Slide>
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Questions?</Heading>
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1.5} textColor="secondary">Questions?</Heading>
                         <Text textAlign="left">Ask now or <Link textColor="tertiary" href="#/2">contact me</Link> later.</Text>
 
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Everything is on Github</Heading>
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1.5} textColor="secondary">Everything is on Github...</Heading>
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore">Demo project without routing (master branch)</Link></Text>
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore/tree/feature/add-routing">Finished project</Link></Text>
                         <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore/tree/feature/add-redux">Finished project (with Redux)</Link></Text>
-                        <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore-presentation">This presentation</Link></Text>
+                        <Text textAlign="left"><Link textColor="tertiary" href="https://github.com/jonathanweiss/kittenstore-presentation">Code of the presentation</Link></Text>
+
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1.5} textColor="secondary">Or online...</Heading>
+                        <Text textAlign="left"><Link textColor="tertiary" href="http://react-router-v4.surge.sh">Presentation</Link></Text>
+                        <Text textAlign="left"><Link textColor="tertiary" href="http://jonathanweiss.net/kittenstore/">Finished project</Link></Text>
                     </Slide>
 
                 </Deck>
