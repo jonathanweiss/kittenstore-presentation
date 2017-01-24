@@ -44,6 +44,7 @@ const images = {
     something: require('../assets/something.png'),
     tea: require('../assets/tea.jpg'),
     jackson: require('../assets/jackson.png'),
+    florence: require('../assets/florence.png'),
     redux: require('../assets/redux.png'),
 };
 
@@ -174,6 +175,11 @@ export default class Presentation extends React.Component {
                         transition={[]}
                     />
 
+                    <Slide>
+                        <Text>We can navigate through our shop.</Text>
+                        <Image src={images.something} width={339} height={490} />
+                    </Slide>
+
                     <CodeSlide
                         code={require('raw!../assets/matchWithRender.example')}
                         ranges={[
@@ -192,10 +198,16 @@ export default class Presentation extends React.Component {
                         transition={[]}
                     />
 
-                    <Slide>
-                        <Text>Still motivated and following?</Text>
-                        <Image src={images.tea} width={528} height={440} />
-                    </Slide>
+                    <CodeSlide
+                        code={require('raw!../assets/category.example')}
+                        ranges={[
+                            { loc: [0, 0], title: "Quick win: Category"},
+                            { loc: [1, 2], note: "Import <Link /> ..."},
+                            { loc: [5, 11], note: "... and use it"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
 
                     <CodeSlide
                         code={require('raw!../assets/listFinal.example')}
@@ -211,29 +223,24 @@ export default class Presentation extends React.Component {
                     />
 
                     <CodeSlide
-                        code={require('raw!../assets/requestParams.example')}
-                        ranges={[
-                            { loc: [0, 22], title: "Request parameters"},
-                            { loc: [3, 10], note: "Accessing 'location.query'"},
-                            { loc: [15, 17], note: "Passing it in as a prop"},
-                        ]}
-                        lang="jsx"
-                        transition={[]}
-                    />
-
-
-                    <CodeSlide
                         code={require('raw!../assets/recursive.example')}
                         ranges={[
-                            { loc: [0, 123], title: "recursive rendering"},
+                            { loc: [0, 0], title: "Detail view"},
                             { loc: [1, 2], note: "We'll need Match and Link"},
-                            { loc: [16, 19], note: "Let's replace the <a href> while we're here..."},
-                            { loc: [71, 75], note: "Adding a <Match /> to <Detail />"},
-                            { loc: [83, 88], note: "Calling <Detail /> inside of <Detail />"},
+                            { loc: [114, 117], note: "Instead of passing in the pathname as a prop, we'll use context here"},
+                            { loc: [5, 6], note: "Passing in the context as a second argument"},
+                            { loc: [14, 19], note: "Let's replace the <a href> with a <Link /> using context.history"},
+                            { loc: [71, 73], note: "Adding a <Match /> to <Detail />"},
+                            { loc: [81, 91], note: "Calling <Detail /> inside of <Detail />"},
                         ]}
                         lang="jsx"
                         transition={[]}
                     />
+
+                    <Slide>
+                        <Text>Still motivated and following?</Text>
+                        <Image src={images.tea} width={528} height={440} />
+                    </Slide>
 
                     <CodeSlide
                         code={require('raw!../assets/programmatically.example')}
@@ -251,7 +258,7 @@ export default class Presentation extends React.Component {
                         ranges={[
                             { loc: [0, 51], title: "Preventing navigation"},
                             { loc: [1, 2], note: "We need <NavigationPropmt />"},
-                            { loc: [23, 27], note: "It will be active when 'when' is truthful"},
+                            { loc: [23, 27], note: "It will be active when 'when' is truthfully"},
                         ]}
                         lang="jsx"
                         transition={[]}
@@ -260,8 +267,16 @@ export default class Presentation extends React.Component {
                     <Slide>
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">react-router + Redux?</Heading>
                         <Appear>
-                            <Image src={images.redux} width={739} height={483} />
+                            <div>
+                                <Link textColor="tertiary" href="https://www.youtube.com/watch?v=kp-NOggyz54">
+                                    <Image src={images.florence} width={858} height={478} />
+                                </Link>
+                                <Link textColor="tertiary" href="https://www.youtube.com/watch?v=kp-NOggyz54">
+                                    <p>Ryan Florence - ‹Rethinker stop={false}/›</p>
+                                </Link>
+                            </div>
                         </Appear>
+
                     </Slide>
 
                     <Slide>

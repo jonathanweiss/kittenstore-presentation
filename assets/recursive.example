@@ -1,9 +1,9 @@
 import React from 'react';
-import { Match, Link } from 'react-router';
+import { Link, Match } from 'react-router';
 
 import { getRandomQuote } from '../tools/quotes';
 
-const Detail = (props) => {
+const Detail = (props, context) => {
   const quote = getRandomQuote();
   const { slug, data, showDetails, displayRelated } = props;
 
@@ -12,11 +12,11 @@ const Detail = (props) => {
   const { age, gender, price, weight } = catData;
 
   const renderMiniView = () => {
-    const link = showDetails ?
-      <span>{catData.name}</span> :
-      <Link to={`/cats/${catData.breedSlug}/${catData.slug}`}>
-        {catData.name}
-      </Link>;
+    const linkTarget = [...context.history.location.pathname.split('/')];
+    linkTarget.pop();
+    linkTarget.push(catData.slug);
+
+    const link = showDetails ? <span>{catData.name}</span> : <Link to={linkTarget.join('/')}>{catData.name}</Link>;
 
     return (
       <div>
@@ -69,38 +69,36 @@ const Detail = (props) => {
           </div>
         </div>
       </div>
-      { displayRelated ?
-        <Match
-        pattern="/cats/:breed/:catName"
-        render={() => {
-          const relPrcts = data
-              .filter(cat => cat.breed === catData.breed)
-              .filter(cat => cat.slug !== catData.slug);
+      { displayRelated ? <Match
+        pattern="/cats/:breed/:catName" render={() => {
+          const relatedProducts = data
+            .filter(cat => cat.breed === catData.breed)
+            .filter(cat => cat.slug !== catData.slug);
 
-          return relPrcts.length > 2 ? (
+          return related.length > 2 ? (
             <div>
               <h3>Related products</h3>
               <div className="columns">
                 <Detail
-                  slug={relPrcts[0].slug}
+                  slug={related[0].slug}
                   data={data}
                   showDetails={false}
                 />
                 <Detail
-                  slug={relPrcts[1].slug}
+                  slug={related[1].slug}
                   data={data}
                   showDetails={false}
                 />
                 <Detail
-                  slug={relPrcts[2].slug}
+                  slug={related[2].slug}
                   data={data}
                   showDetails={false}
                 />
               </div>
             </div>
-            ) : null;
-        }
-      } /> : null }
+          ) : null;
+        }}
+      /> : null }
     </div>
   );
 
@@ -112,6 +110,10 @@ Detail.propTypes = {
   data: React.PropTypes.array.isRequired,
   displayRelated: React.PropTypes.bool,
   showDetails: React.PropTypes.bool,
+};
+
+Detail.contextTypes = {
+  history: React.PropTypes.object,
 };
 
 Detail.defaultProps = {
