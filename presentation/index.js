@@ -127,7 +127,7 @@ export default class Presentation extends React.Component {
 
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Installing</Heading>
                         <CodePane lang="bash" textSize="1.75rem">
-                            npm install --save react-router@next --save
+                            npm install --save react-router@4.0.0-alpha.6
                         </CodePane>
 
                         <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Using</Heading>
@@ -184,9 +184,9 @@ export default class Presentation extends React.Component {
                             { loc: [15, 17], note: "Can we improve this?"},
                             { loc: [20, 30], note: "Yes we can!"},
                             { loc: [30, 40], note: "render() gets called with useful payload"},
-                            { loc: [43, 49], note: "Reading query parameters from location.query"},
-                            { loc: [40, 61], note: "Combining URL and query parameters"},
-                            { loc: [61, 71], note: "There can more more than one URL parameter"},
+                            { loc: [43, 47], note: "Reading query parameters from location.query"},
+                            { loc: [49, 58], note: "Combining URL and query parameters"},
+                            { loc: [60, 70], note: "There can more more than one URL parameter"},
                         ]}
                         lang="jsx"
                         transition={[]}
@@ -200,14 +200,11 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/listFinal.example')}
                         ranges={[
-                            { loc: [0, 106], title: "Finalizing <List />"},
+                            { loc: [0, 0], title: "Finishing the list view"},
                             { loc: [1, 2], note: "You know the drill. ;)"},
-                            { loc: [101, 102], note: "Defining the contextTypes"},
-                            { loc: [75, 76], note: "Getting the pathname..."},
-                            { loc: [88, 89], note: "...and passing it to renderProducts()"},
-                            { loc: [41, 46], note: "Adding a link to the cat name"},
-                            { loc: [18, 19], note: "Adding links to all headers for sorting"},
-                            { loc: [19, 20], note: "Show an arrow if it's sorted after this header"},
+                            { loc: [20, 25], note: "Add a sort link to the header; use a question mark and let the browser do the work"},
+                            { loc: [43, 52], note: "Link to the product"},
+                            { loc: [73, 80], note: "Link to the category"},
                         ]}
                         lang="jsx"
                         transition={[]}
@@ -270,8 +267,9 @@ export default class Presentation extends React.Component {
                     <Slide>
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Options to using it</Heading>
                         <List>
+                            <ListItem><Link textColor="tertiary" href="https://github.com/ReactTraining/react-router-addons-controlled">react-router-addons-controlled</Link> - experimental</ListItem>
                             <ListItem><Link textColor="tertiary" href="https://github.com/timdorr/react-router-redux/tree/5.0.x">react-router-redux</Link> on 5.0.x - inactive for months</ListItem>
-                            <ListItem><Link textColor="tertiary" href="https://github.com/supasate/connected-react-router">connected-react-router</Link> - experimental project</ListItem>
+                            <ListItem><Link textColor="tertiary" href="https://github.com/supasate/connected-react-router">connected-react-router</Link> - experimental</ListItem>
                         </List>
                         <Appear>
                             <Text textAlign="left">Tip: use <Code>connected-react-router</Code> if you're brave!</Text>

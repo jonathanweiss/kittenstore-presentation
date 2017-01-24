@@ -42,19 +42,18 @@
   pattern="/cats/:breed"
   exactly
   render={ ({ params, location }) => {
-    let sortedBy, sortDirection;
-    if (location.query) {
-      { sortedBy, sortDirection } =
-      location.query;
-    }
+    const { sortedBy, sortDirection } =
+      location.query ? location.query :
+      { sortedBy: null, sortDirection: null };
 
     return (
       <List
-        type="cats"
-        data={cats}
         slug={params.breed}
+        pathname={location.pathname}
         sortedBy={sortedBy}
         sortDirection={sortDirection}
+        type="cats"
+        data={cats}
       />
     );
   } }
