@@ -20,9 +20,23 @@ const App = (props) => {
 
   return (
     <div>
+
       <Match
         pattern="/about"
+        exactly
         component={About}
+      />
+
+      <Match
+        pattern="/cart"
+        exactly
+        component={Cart}
+      />
+
+      <Match
+        pattern="/contact"
+        exactly
+        component={Contact}
       />
 
       <Miss component={Error404} />

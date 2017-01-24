@@ -107,14 +107,14 @@ export default class Presentation extends React.Component {
                     <Slide>
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Declarative routing</Heading>
 
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Configuration components</Heading>
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Configuration</Heading>
                         <List>
                             <ListItem><Code>&lt;*Router /&gt;</Code>: Browser, Hash, Memory, Server</ListItem>
                             <ListItem><Code>&lt;Match /&gt;</Code></ListItem>
                             <ListItem><Code>&lt;Miss /&gt;</Code></ListItem>
                         </List>
 
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Action components</Heading>
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Action</Heading>
                         <List>
                             <ListItem><Code>&lt;Link /&gt;</Code></ListItem>
                             <ListItem><Code>&lt;NavigationPrompt /&gt;</Code></ListItem>
@@ -137,48 +137,12 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/missAndMatch.example')}
                         ranges={[
-                            { loc: [0, 0], title: "Using <Miss /> and <Match />"},
+                            { loc: [0, 54], title: "Simple routes"},
                             { loc: [3, 4], note: "Import the router components"},
-                            { loc: [22, 26], note: "Define the component 'About' for path '/about'"},
-                            { loc: [27, 28], note: "Render this component when NO Match is active"},
-                        ]}
-                        lang="jsx"
-                        transition={[]}
-                    />
-
-                    <Slide>
-                        <Text>We've added a single route and a 404 page.</Text>
-                        <Image src={images.something} width={339} height={490} />
-                    </Slide>
-
-                    <CodeSlide
-                        code={require('raw!../assets/addNavigation.example')}
-                        ranges={[
-                            { loc: [0, 0], title: "Adding navigation"},
-                            { loc: [22, 23], note: "Place the navigation on top of all other components"},
-                            { loc: [23, 38], note: "We can add more static pages while we are here"},
-                        ]}
-                        lang="jsx"
-                        transition={[]}
-                    />
-
-                    <CodeSlide
-                        code={require('raw!../assets/addLinksToNavigation.example')}
-                        ranges={[
-                            { loc: [0, 0], title: "Let's enable those links"},
-                            { loc: [1, 2], note: "Import the <Link /> component"},
-                            { loc: [11, 16], note: "And use it anstead of <a href>"},
-                            { loc: [18, 19], note: "Don't forget the closing tag"},
-                        ]}
-                        lang="jsx"
-                        transition={[]}
-                    />
-                    <CodeSlide
-                        code={require('raw!../assets/markActiveNavigationItem.example')}
-                        ranges={[
-                            { loc: [0, 9], title: "Mark nav item as active"},
-                            { loc: [0, 1], note: "'children' function has useful arguments"},
-                            { loc: [1, 6], note: "First part of 'location' is the active entry"},
+                            { loc: [22, 28], note: "Render the component 'About' for path '/about'"},
+                            { loc: [29, 34], note: "... 'Cart' for path '/cart'"},
+                            { loc: [35, 40], note: "... and  'Contact' for path '/contact'"},
+                            { loc: [41, 42], note: "Render this component when NO Match is active"},
                         ]}
                         lang="jsx"
                         transition={[]}
@@ -187,10 +151,24 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/markActiveAlternative.example')}
                         ranges={[
-                            { loc: [0, 21], title: "Use 'context' instead"},
-                            { loc: [18, 21], note: "define the contextTypes"},
-                            { loc: [0, 1], note: "Use the 'context' parameter"},
-                            { loc: [4, 5], note: "Get the 'pathname' from it"},
+                            { loc: [0, 0], title: "Add the navigation"},
+                            { loc: [8, 10], note: "Place the navigation on top of all other components"},
+                            { loc: [34, 37], note: "Define the contextTypes"},
+                            { loc: [0, 1], note: "Pass in 'context' to App()"},
+                            { loc: [4, 5], note: "Grab 'location.pathname' from 'history'"},
+                            { loc: [10, 11], note: "The second part of the path to is the active item"},
+                        ]}
+                        lang="jsx"
+                        transition={[]}
+                    />
+
+                    <CodeSlide
+                        code={require('raw!../assets/addLinksToNavigation.example')}
+                        ranges={[
+                            { loc: [0, 0], title: "Make links work"},
+                            { loc: [1, 2], note: "Import <Link />"},
+                            { loc: [11, 13], note: "Use it instead of the anchor"},
+                            { loc: [18, 19], note: "close the tag"},
                         ]}
                         lang="jsx"
                         transition={[]}
@@ -199,40 +177,25 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/matchWithRender.example')}
                         ranges={[
-                            { loc: [0, 48], title: "What about props?"},
+                            { loc: [0, 0], title: "More routes / views"},
+                            { loc: [0, 10], note: "Display a component with props"},
                             { loc: [3, 9], note: "Gain flexibility with render()"},
+                            { loc: [10, 20], note: "The first category also uses props"},
                             { loc: [15, 17], note: "Can we improve this?"},
-                            { loc: [24, 28], note: "Yes we can!"},
-                            { loc: [31, 44], note: "Accessing URL parameters"},
+                            { loc: [20, 30], note: "Yes we can!"},
+                            { loc: [30, 40], note: "render() gets called with useful payload"},
+                            { loc: [43, 49], note: "Reading query parameters from location.query"},
+                            { loc: [40, 61], note: "Combining URL and query parameters"},
+                            { loc: [61, 71], note: "There can more more than one URL parameter"},
                         ]}
                         lang="jsx"
                         transition={[]}
                     />
 
-                    <CodeSlide
-                        code={require('raw!../assets/addLinksToCategory.example')}
-                        ranges={[
-                            { loc: [0, 43], title: "Adding <Link />s"},
-                            { loc: [1, 2], note: "First import it"},
-                            { loc: [15, 17], note: "We add a new var here..."},
-                            { loc: [24, 31], note: "... and pass it to renderProduct()"},
-                            { loc: [3, 6], note: "Use 'type' and 'slug' to create the target"},
-                            { loc: [10, 11], note: "Closing it"},
-                        ]}
-                        lang="jsx"
-                        transition={[]}
-                    />
-
-                    <CodeSlide
-                        code={require('raw!../assets/lastRoutes.example')}
-                        ranges={[
-                            { loc: [0, 24], title: "Only two more routes"},
-                            { loc: [1, 11], note: "There can be more than one parameter"},
-                            { loc: [13, 22], note: "The search will be simple"},
-                        ]}
-                        lang="jsx"
-                        transition={[]}
-                    />
+                    <Slide>
+                        <Text>Still motivated and following?</Text>
+                        <Image src={images.tea} width={528} height={440} />
+                    </Slide>
 
                     <CodeSlide
                         code={require('raw!../assets/listFinal.example')}
@@ -261,10 +224,6 @@ export default class Presentation extends React.Component {
                         transition={[]}
                     />
 
-                    <Slide>
-                        <Text>Still motivated and following?</Text>
-                        <Image src={images.tea} width={528} height={440} />
-                    </Slide>
 
                     <CodeSlide
                         code={require('raw!../assets/recursive.example')}

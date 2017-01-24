@@ -6,10 +6,26 @@ const App = (props, context) => {
 
   return (
     <div>
-      <Navigation items={navigationData} activePath={`/${pathParts[1]}`} />
-      <Match pattern="/about" exactly component={About} />
-      <Match pattern="/cart" exactly component={Cart} />
-      <Match pattern="/contact" exactly component={Contact} />
+      <Navigation
+        items={navigationData}
+        activePath={`/${pathParts[1]}`}
+      />
+
+      <Match
+        pattern="/about"
+        exactly
+        component={About}
+      />
+      <Match
+        pattern="/cart"
+        exactly
+        component={Cart}
+      />
+      <Match
+        pattern="/contact"
+        exactly
+        component={Contact}
+      />
 
       <Miss component={Error404} />
     </div>

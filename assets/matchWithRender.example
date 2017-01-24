@@ -21,7 +21,7 @@
 <Match
   pattern="/cats"
   exactly
-  render={() => {
+  render={ () => {
     const { desc, items } = categories.cats;
     return (
       <Category desc={desc} items={items} />
@@ -29,19 +29,46 @@
   }}
 />
 <Match
+  pattern="/search/:term"
+  exactly
+  render={ ({ params }) => (
+    <SearchResult
+      term={params.term}
+      data={cats}
+    />
+  )}
+/>
+<Match
   pattern="/cats/:breed"
   exactly
-  render={({ params }) => {
+  render={ ({ params, location }) => {
+    let sortedBy, sortDirection;
+    if (location.query) {
+      { sortedBy, sortDirection } =
+      location.query;
+    }
+
     return (
       <List
         type="cats"
         data={cats}
         slug={params.breed}
+        sortedBy={sortedBy}
+        sortDirection={sortDirection}
       />
     );
-  }}
+  } }
 />
-
+<Match
+  pattern="/cats/:breed/:catName"
+  exactly
+  render={ ({ params }) => (
+    <Detail
+      data={cats}
+      slug={params.catName}
+    />
+  )}
+/>
 
 
 
