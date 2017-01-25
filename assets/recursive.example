@@ -71,7 +71,7 @@ const Detail = (props, context) => {
       </div>
       { displayRelated ? <Match
         pattern="/cats/:breed/:catName" render={() => {
-          const relatedProducts = data
+          const related = data
             .filter(cat => cat.breed === catData.breed)
             .filter(cat => cat.slug !== catData.slug);
 
@@ -117,7 +117,7 @@ Detail.contextTypes = {
 };
 
 Detail.defaultProps = {
-  displayRelated: false,
+  displayRelated: true,
   showDetails: true,
 };
 

@@ -70,7 +70,7 @@ const List = (props) => {
         <section className="empty">
           <i className="icon icon-baffled" />
           <p className="empty-title">No product found for category &ldquo;{slug}&rdquo;.</p>
-          <p className="74empty-meta">Try a different category.</p>
+          <p className="empty-meta">Try a different category.</p>
           <Link to={`/${type}`}>
             <button
               className="empty-action btn btn-primary"
@@ -99,9 +99,13 @@ List.propTypes = {
   slug: React.PropTypes.string.isRequired,
   type: React.PropTypes.string.isRequired,
   data: React.PropTypes.array.isRequired,
-  location: React.PropTypes.object,
+  pathname: React.PropTypes.string,
   sortedBy: React.PropTypes.string,
   sortDirection: React.PropTypes.string,
+};
+
+List.defaultProps = {
+  pathname: '',
 };
 
 export default List;

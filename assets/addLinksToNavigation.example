@@ -14,8 +14,8 @@ const renderNavItem = (entry, activePath) => {
       className={cssClasses.join(' ')}
       key={entry.link}
     >
-        {entry.icon ? <i className={`icon icon-${entry.icon}`} /> : null}
-        {entry.text}
+      {entry.icon ? <i className={`icon icon-${entry.icon}`} /> : null}
+      {entry.text}
     </Link>
   );
 };
