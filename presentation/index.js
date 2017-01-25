@@ -124,9 +124,9 @@ export default class Presentation extends React.Component {
                     </Slide>
 
                     <Slide>
-                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Setting up the router</Heading>
+                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">#1 Setting up the router</Heading>
 
-                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Installing</Heading>
+                        <Heading textAlign="left" size={3} textFont="primary" lineHeight={1} textColor="secondary">Installing (done in project)</Heading>
                         <CodePane lang="bash" textSize="1.75rem">
                             npm install --save react-router@4.0.0-alpha.6
                         </CodePane>
@@ -138,7 +138,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/missAndMatch.example')}
                         ranges={[
-                            { loc: [0, 54], title: "Simple routes"},
+                            { loc: [0, 54], title: "#2 Simple routes"},
                             { loc: [3, 4], note: "Import the router components"},
                             { loc: [22, 28], note: "Render the component 'About' for path '/about'"},
                             { loc: [29, 34], note: "... 'Cart' for path '/cart'"},
@@ -152,7 +152,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/markActiveAlternative.example')}
                         ranges={[
-                            { loc: [0, 0], title: "Add the navigation"},
+                            { loc: [0, 0], title: "#3a Add the navigation"},
                             { loc: [8, 10], note: "Place the navigation on top of all other components"},
                             { loc: [34, 37], note: "Define the contextTypes"},
                             { loc: [0, 1], note: "Pass in 'context' to App()"},
@@ -166,7 +166,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/addLinksToNavigation.example')}
                         ranges={[
-                            { loc: [0, 0], title: "Make links work"},
+                            { loc: [0, 0], title: "#3b Make links work"},
                             { loc: [1, 2], note: "Import <Link />"},
                             { loc: [11, 13], note: "Use it instead of the anchor"},
                             { loc: [18, 19], note: "close the tag"},
@@ -183,7 +183,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/matchWithRender.example')}
                         ranges={[
-                            { loc: [0, 0], title: "More routes / views"},
+                            { loc: [0, 0], title: "#4 More routes / views"},
                             { loc: [0, 10], note: "Display a component with props"},
                             { loc: [3, 9], note: "Gain flexibility with render()"},
                             { loc: [10, 20], note: "The first category also uses props"},
@@ -201,7 +201,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/category.example')}
                         ranges={[
-                            { loc: [0, 0], title: "Quick win: Category"},
+                            { loc: [0, 0], title: "#5 Quick win: Category"},
                             { loc: [1, 2], note: "Import <Link /> ..."},
                             { loc: [5, 11], note: "... and use it"},
                         ]}
@@ -212,7 +212,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/listFinal.example')}
                         ranges={[
-                            { loc: [0, 0], title: "Finishing the list view"},
+                            { loc: [0, 0], title: "#6 Finishing the list view"},
                             { loc: [1, 2], note: "You know the drill. ;)"},
                             { loc: [20, 25], note: "Add a sort link to the header; use a question mark and let the browser do the work"},
                             { loc: [43, 52], note: "Link to the product"},
@@ -225,7 +225,8 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/recursive.example')}
                         ranges={[
-                            { loc: [0, 0], title: "Detail view"},
+                            { loc: [0, 0], title: "#7 Detail view"},
+                            { loc: [119, 120], note: "Let us change a default prop first (sorry!)"},
                             { loc: [1, 2], note: "We'll need Match and Link"},
                             { loc: [114, 117], note: "Instead of passing in the pathname as a prop, we'll use context here"},
                             { loc: [5, 6], note: "Passing in the context as a second argument"},
@@ -245,7 +246,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/programmatically.example')}
                         ranges={[
-                            { loc: [0, 59], title: "Navigate programatically"},
+                            { loc: [0, 59], title: "#8 Navigate w/o <Link />"},
                             { loc: [28, 29], note: "We grab 'transitionTo()' from 'context.router'..."},
                             { loc: [22, 23], note: "...and use it with the search term"},
                         ]}
@@ -256,7 +257,7 @@ export default class Presentation extends React.Component {
                     <CodeSlide
                         code={require('raw!../assets/prevent.example')}
                         ranges={[
-                            { loc: [0, 51], title: "Preventing navigation"},
+                            { loc: [0, 51], title: "#9 Preventing navigation"},
                             { loc: [1, 2], note: "We need <NavigationPropmt />"},
                             { loc: [23, 27], note: "It will be active when 'when' is truthfully"},
                         ]}
@@ -272,7 +273,7 @@ export default class Presentation extends React.Component {
                                     <Image src={images.florence} width={858} height={478} />
                                 </Link>
                                 <Link textColor="tertiary" href="https://www.youtube.com/watch?v=kp-NOggyz54">
-                                    <p>Ryan Florence - ‹Rethinker stop={false}/›</p>
+                                    <p>Ryan Florence - &lsaquo;Rethinker stop=&#123;false&#125;/&nbsp;&rsaquo;</p>
                                 </Link>
                             </div>
                         </Appear>
