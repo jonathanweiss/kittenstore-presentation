@@ -135,6 +135,16 @@ export default class Presentation extends React.Component {
                         <CodePane source={require("raw!../assets/using.example")} lang="jsx" textSize="1.75rem" />
                     </Slide>
 
+                    <Slide>
+                        <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">Warning!</Heading>
+                        <Text textAlign="left">This is an (static) PDF version of an interactive presentation.</Text>
+                        <Text textAlign="left">I used scrolling and highlighting of specific lines for each code slide. These features aren't possible in PDF.</Text>
+                        <Text textAlign="left">
+                            View the <Link textColor="tertiary" href="http://react-router-v4.surge.sh">original presentation</Link> to see the code on all code slides.
+                        </Text>
+                    </Slide>
+
+
                     <CodeSlide
                         code={require('raw!../assets/missAndMatch.example')}
                         ranges={[
@@ -267,17 +277,12 @@ export default class Presentation extends React.Component {
 
                     <Slide>
                         <Heading textAlign="left" size={2} lineHeight={1} textColor="tertiary">react-router + Redux?</Heading>
-                        <Appear>
-                            <div>
-                                <Link textColor="tertiary" href="https://www.youtube.com/watch?v=kp-NOggyz54">
-                                    <Image src={images.florence} width={858} height={478} />
-                                </Link>
-                                <Link textColor="tertiary" href="https://www.youtube.com/watch?v=kp-NOggyz54">
-                                    <p>Ryan Florence - &lsaquo;Rethinker stop=&#123;false&#125;/&nbsp;&rsaquo;</p>
-                                </Link>
-                            </div>
-                        </Appear>
-
+                        <Link textColor="tertiary" href="https://www.youtube.com/watch?v=kp-NOggyz54">
+                            <Image src={images.florence} width={858} height={478} />
+                        </Link>
+                        <Link textColor="tertiary" href="https://www.youtube.com/watch?v=kp-NOggyz54">
+                            <p>Ryan Florence - &lsaquo;Rethinker stop=&#123;false&#125;/&nbsp;&rsaquo;</p>
+                        </Link>
                     </Slide>
 
                     <Slide>
@@ -287,20 +292,14 @@ export default class Presentation extends React.Component {
                             <ListItem><Link textColor="tertiary" href="https://github.com/timdorr/react-router-redux/tree/5.0.x">react-router-redux</Link> on 5.0.x - inactive for months</ListItem>
                             <ListItem><Link textColor="tertiary" href="https://github.com/supasate/connected-react-router">connected-react-router</Link> - experimental</ListItem>
                         </List>
-                        <Appear>
-                            <Text textAlign="left">Tip: use <Code>connected-react-router</Code> if you're brave!</Text>
-                        </Appear>
-                        <Appear>
-                            <Text textAlign="left">Check out the branch <Code>/feature/add-redux</Code> on the demo project.</Text>
-                        </Appear>
+                        <Text textAlign="left">Tip: use <Code>connected-react-router</Code> if you're brave!</Text>
+                        <Text textAlign="left">Check out the branch <Code>/feature/add-redux</Code> on the demo project.</Text>
                     </Slide>
 
 
                     <Slide>
                         <Text>We saw the kittens, but where is <em>Michael Jackson</em>?</Text>
-                        <Appear>
-                            <Image src={images.jackson} width={965} height={638} />
-                        </Appear>
+                        <Image src={images.jackson} width={965 * 0.75} height={638 * 0.75} />
                     </Slide>
 
                     <Slide>
